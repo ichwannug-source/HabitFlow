@@ -6,8 +6,8 @@ import {
 } from 'lucide-react';
 
 // --- Konfigurasi ---
-const apiKey = ""; // Otomatis diisi oleh environment
-const GEMINI_MODEL = "gemini-2.5-flash-preview-09-2025";
+const apiKey = "AIzaSyCSxB2IU_WSKtROnJ4_XHf7ub7saIuWdjw";
+const GEMINI_MODEL = "gemini-2.5-flash";
 const THEMES = {
   modern: 'from-indigo-600 to-purple-600',
   emerald: 'from-emerald-500 to-teal-600',
@@ -141,7 +141,7 @@ export default function App() {
     
     setHistory(prev => ({
       ...prev,
-      [today]: { ...prev[today], status, percentage }
+      [today]: { ...(prev[today] || {}), status, percentage }
     }));
   }, [habits]);
 
